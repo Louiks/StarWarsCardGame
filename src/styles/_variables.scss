@@ -1,0 +1,60 @@
+// spacings
+$spacing-xx-small: 0.25rem;
+$spacing-x-small: 0.5rem;
+$spacing-x-small-plus: 0.75rem;
+$spacing-small: 1rem;
+$spacing-small-plus: 1.5rem;
+$spacing-medium: 2rem;
+$spacing-medium-plus: 2.5rem;
+$spacing-large: 3rem;
+$spacing-larger: 4rem;
+$spacing-larger-plus: 4.5rem;
+$spacing-4x-large: 8rem;
+
+
+// fonts
+$font-small: 1rem;
+$font-small-plus: 1.5rem;
+$font-large: 2rem;
+$font-larger: 3rem;
+$font-larger-plus: 3.5rem;
+
+// colors
+$primary: #373737;
+$secondary: #FFD700;
+
+$light-purple: #8888d4;
+$light-green: #15b610;
+$light-red: #ff5959;
+$light-grey: #515151;
+
+$white: #fff;
+$magenta: rgba(255, 4, 255, 0.75);
+$cyan: rgba(4, 255, 255, 0.75);
+$marine-blue: rgba(78, 119, 255, 0.5);
+$deep-marine-blue: #0005309c;
+$greyish-blue: #53677c;
+
+$dark-greyish-blue: #38495a;
+$dark-marine-blue: #1B2735;
+$dark-grey: #373737;
+$black: #090A0F;
+
+$light-grey-semi-transparent: rgba(116, 116, 116, 0.5);
+$dark-green-semi-transparent: rgba(0, 140, 19, 0.5);
+$dark-red-semitransparent: rgba(172, 46, 46, 0.57);
+
+// button
+$button-radius-primary: 2rem;
+$button-width-primary: 14.5rem;
+$button-height-primary: 3.5rem;
+$button-border-color-primary: #fff;
+$button-color-primary: #fff;
+$button-opacity: 0.8;
+
+// other
+$small-blur: 3px;
+$semi-transparent: 0.5;
+$animation-duration: 0.5s;
+$background-gradient: radial-gradient(ellipse at bottom, $dark-marine-blue 0%, $black 100%);
+

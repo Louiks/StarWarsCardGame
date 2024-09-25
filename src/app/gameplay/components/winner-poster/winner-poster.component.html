@@ -1,0 +1,42 @@
+<ng-container *ngIf="winner === null; else winnerOrTieBanner">
+  <ng-container *ngTemplateOutlet="informationBanner"></ng-container>
+</ng-container>
+<ng-template #winnerOrTieBanner>
+    <span *ngIf="winner === 0; else winnerBanner" class="winner-text winner-text--rank-1">
+     {{ 'GAMEPLAY.WINNER_POSTER.TIE' | translate }}
+  </span>
+</ng-template>
+
+<ng-template #informationBanner>
+  <span class="winner-text winner-text--rank-1">
+    {{ 'GAMEPLAY.WINNER_POSTER.INSTRUCTION.PRESS' | translate }}
+  </span>
+  <span class="winner-text winner-text--rank-2">
+    {{ 'GAMEPLAY.WINNER_POSTER.INSTRUCTION.DRAW' | translate }}
+  </span>
+  <span class="winner-text winner-text--rank-3">
+    {{ 'GAMEPLAY.WINNER_POSTER.INSTRUCTION.TO_START' | translate }}
+  </span>
+  <span class="winner-text winner-text--rank-4">
+    {{ 'GAMEPLAY.WINNER_POSTER.INSTRUCTION.THE_GAME' | translate }}
+  </span>
+</ng-template>
+
+<ng-template #winnerBanner>
+  <span class="winner-text winner-text--rank-1">
+    {{
+      winner === -1
+        ? ('GAMEPLAY.WINNER_POSTER.LEFT_PLAYER' | translate)
+        : ('GAMEPLAY.WINNER_POSTER.RIGHT_PLAYER' | translate)
+    }}
+  </span>
+  <span class="winner-text winner-text--rank-2">
+    {{ 'GAMEPLAY.WINNER_POSTER.WINS' | translate }}
+  </span>
+  <span class="winner-text winner-text--rank-3">
+    {{ 'GAMEPLAY.WINNER_POSTER.WITH_A_GREATER' | translate }}
+  </span>
+  <span class="winner-text winner-text--rank-4">
+    {{ calculationBase }}{{ 'GAMEPLAY.WINNER_POSTER.EXCLAMATION_MARK' | translate }}
+  </span>
+</ng-template>

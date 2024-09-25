@@ -1,0 +1,30 @@
+@import "variables";
+
+@mixin button-primary {
+
+  width: $button-width-primary;
+  border-radius: $button-radius-primary;
+  border-color: $button-border-color-primary;
+  color: $button-color-primary;
+  font-size: $font-small-plus;
+  padding-bottom: $spacing-x-small;
+  background: inherit;
+  font-family: 'starwars', 'arial', sans-serif;
+
+  &:hover:not(:disabled) {
+    opacity: $button-opacity;
+    border-color: $secondary;
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: $button-opacity;
+    border-color: $secondary;
+  }
+
+  &:disabled {
+    color: $dark-greyish-blue;
+    border-color: $dark-greyish-blue;
+    cursor: progress;
+  }
+}

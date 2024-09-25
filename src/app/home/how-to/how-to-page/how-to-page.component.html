@@ -1,0 +1,27 @@
+<app-text-card>
+  <h1>{{ 'SHARED.HOW_TO.WELCOMING' | translate }}</h1>
+  <h2>{{ 'SHARED.HOW_TO.TITLES.HOW_TO_USE_APPLICATION' | translate }}</h2>
+  <p [innerHTML]="'SHARED.HOW_TO.CONTENTS.HOW_TO_USE_APPLICATION' | translate"></p>
+  <br>
+  <h2>{{ 'SHARED.HOW_TO.TITLES.WHAT_ARE_RESOURCES' | translate }}</h2>
+  <p>{{ 'SHARED.HOW_TO.CONTENTS.WHAT_ARE_RESOURCES_BEGINNING' | translate }}</p>
+  <ul>
+    <li>
+      <span class='height'>H</span>
+      {{ 'SHARED.HOW_TO.CONTENTS.WHAT_ARE_RESOURCES_HEIGHT' | translate }}
+    </li>
+    <li>
+      <span class='mass'>M</span>
+      {{ 'SHARED.HOW_TO.CONTENTS.WHAT_ARE_RESOURCES_MASS' | translate }}
+    </li>
+    <li>
+      <span class='bmi'>BMI</span>
+      {{ 'SHARED.HOW_TO.CONTENTS.WHAT_ARE_RESOURCES_BMI' | translate }}
+    </li>
+  </ul>
+  <p>{{ 'SHARED.HOW_TO.CONTENTS.WHAT_ARE_RESOURCES_ENDING' | translate }}</p>
+  <br>
+  <h2>{{ 'SHARED.HOW_TO.TITLES.HOW_TO_CHANGE_RESOURCE' | translate }}</h2>
+  <p>{{ 'SHARED.HOW_TO.CONTENTS.HOW_TO_CHANGE_RESOURCE' | translate }}</p>
+</app-text-card>
+

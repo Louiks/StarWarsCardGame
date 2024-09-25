@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'styles/page';
+@import 'styles/mixins';
+
+@font-face {
+  font-family: starwars;
+  src: url(assets/Starjedi.ttf) format("opentype");
+}
+
+body {
+  margin: 0;
+  font-family: 'starwars', 'arial', sans-serif;
+  overflow-x: hidden;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.button-primary {
+  @include button-primary;
+}

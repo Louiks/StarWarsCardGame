@@ -1,0 +1,26 @@
+<app-point-counter [leftPlayerScore]="leftPlayerScore$ | async"
+                   [rightPlayerScore]="rightPlayerScore$ | async"></app-point-counter>
+
+<div class="cards-container">
+  <app-champion-card *ngFor="let champion of champions$ | async"
+                     [bodyMassIndex]="champion.BMI"
+                     [heightInCentimeters]="champion.height"
+                     [massInKilograms]="champion.mass"
+                     [name]="champion.name"
+                     [ngClass]="{'card--loading': (loadingPlayersState | async)?.loading}"
+                     class="card"></app-champion-card>
+</div>
+
+<div class="button-container">
+  <button (click)="drawBoth()" *ngIf="!(loadingPlayersState | async)?.loading; else spinner" class="button-primary">
+    {{ 'GAMEPLAY.GAME_PAGE.BUTTONS.DRAW' | translate }}
+  </button>
+  <ng-template #spinner><i class="fa fa-spinner fa-spin button-container__spinner"></i></ng-template>
+</div>
+
+<app-settings-menu (calculationBaseChanged)="changeCalculationBase($event)"
+                   [calculationBase]="calculationBase"></app-settings-menu>
+
+<app-winner-poster *ngIf="!(loadingPlayersState | async)?.loading"
+                   [calculationBase]="historicalCalculationBase"
+                   [winner]="winner$ | async"></app-winner-poster>

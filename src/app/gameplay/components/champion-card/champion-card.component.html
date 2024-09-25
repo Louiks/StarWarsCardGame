@@ -1,0 +1,17 @@
+<mat-card class="card__container">
+  <mat-card-header class="card__header">
+    <span class="champion-info__name">{{ name }}</span>
+  </mat-card-header>
+  <div class="card__avatar">
+    <img alt="avatar" mat-card-lg-image src="assets/avatar.png">
+  </div>
+  <mat-card-content class="card__content">
+    <div class="champion-info__bmi">
+      <span>{{ 'GAMEPLAY.CARD.STATS.BODY_MASS_INDEX' | translate }} {{ bodyMassIndex }}</span>
+    </div>
+    <div class="champion-info__combined">
+      <span>{{ 'GAMEPLAY.CARD.STATS.HEALTH' | translate }} {{ heightInCentimeters }}</span>
+      <span>{{ 'GAMEPLAY.CARD.STATS.MASS' | translate }} {{ massInKilograms }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>

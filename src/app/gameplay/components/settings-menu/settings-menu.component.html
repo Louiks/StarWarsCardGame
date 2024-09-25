@@ -1,0 +1,24 @@
+<button #toggleButton [ngClass]="isMenuOpen ? 'settings__button--visible' : 'settings__button--hidden'"
+        class="settings__button">
+  <mat-icon
+    [ngClass]="{'settings__icon--activate': shouldAnimate && isMenuOpen, 'settings__icon--deactivate': shouldAnimate && !isMenuOpen}">
+    settings
+  </mat-icon>
+</button>
+<div
+  #menu
+  [ngClass]="isMenuOpen ? 'menu--visible' : 'menu--hidden'"
+  class="menu__container">
+  <button (click)="changeCalculationBase($event, 'mass')">
+    <mat-icon *ngIf="calculationBase === 'mass'">check_circle_outline</mat-icon>
+    {{ 'GAMEPLAY.SETTINGS.MASS' | translate }}
+  </button>
+  <button (click)="changeCalculationBase($event, 'height')">
+    <mat-icon *ngIf="calculationBase === 'height'">check_circle_outline</mat-icon>
+    {{ 'GAMEPLAY.SETTINGS.HEIGHT' | translate }}
+  </button>
+  <button (click)="changeCalculationBase($event, 'BMI')">
+    <mat-icon *ngIf="calculationBase === 'BMI'">check_circle_outline</mat-icon>
+    {{ 'GAMEPLAY.SETTINGS.BMI' | translate }}
+  </button>
+</div>

@@ -1,0 +1,65 @@
+@import '../../../styles/variables';
+
+:host {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+}
+
+.cards-container {
+  height: calc(100vh - 120px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .card {
+    filter: blur($small-blur);
+    opacity: $semi-transparent;
+    animation: removeBlurAndTransparency $animation-duration ease forwards;
+
+    &--loading {
+      animation: addBlurAndTransparency $animation-duration ease forwards;
+    }
+  }
+}
+
+.button-container {
+  width: fit-content;
+
+  &__spinner {
+    margin-top: $spacing-small;
+    color: $white;
+    scale: 2;
+  }
+
+  &__settings {
+    margin-top: $spacing-small;
+
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.parameters {
+  &__container {
+    gap: 4rem;
+    width: 100%;
+  }
+}
+
+@keyframes removeBlurAndTransparency {
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes addBlurAndTransparency {
+  to {
+    filter: blur($small-blur);
+    opacity: $semi-transparent;
+  }
+}

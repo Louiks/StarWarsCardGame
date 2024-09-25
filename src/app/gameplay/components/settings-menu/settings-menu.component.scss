@@ -1,0 +1,121 @@
+@import "../../../../styles/variables";
+
+:host {
+  --offset: 182px;
+  --offset-minus: calc(var(--offset) * -1);
+
+  position: fixed;
+  top: 70%;
+  right: 0;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+
+  .settings {
+    &__button {
+      display: flex;
+      z-index: 2;
+      background: inherit;
+      background-color: $light-grey-semi-transparent;
+      color: white;
+      border-color: transparent;
+      border-radius: $spacing-small 0 0 $spacing-small;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+
+      &--hidden {
+        transform: translateX(0%);
+      }
+
+      &--visible {
+        transform: translateX(var(--offset-minus));
+      }
+    }
+
+    &__icon {
+      &--activate {
+        animation: rotateRight 1s infinite;
+      }
+
+      &--deactivate {
+        animation: rotateLeft 1s infinite;
+      }
+    }
+  }
+
+  .menu {
+    &--hidden {
+      transform: translateX(0%);
+    }
+
+    &--visible {
+      transform: translateX(var(--offset-minus));
+    }
+
+    &__container {
+      position: absolute;
+      top: 0;
+      right: var(--offset-minus);
+      display: flex;
+      flex-direction: column;
+      width: 150px;
+      padding: $spacing-small;
+      color: white;
+      background-color: $light-grey-semi-transparent;
+      border-radius: 0 0 0 $spacing-xx-small;
+      transition: transform 0.3s ease-in-out;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: $spacing-x-small-plus;
+        padding: 8px;
+        color: white;
+        background: none;
+        border: none;
+        font-size: 14px;
+        text-align: left;
+        cursor: pointer;
+
+        &:first-child {
+          border-radius: $spacing-x-small $spacing-x-small 0 0;
+        }
+
+        &:last-child {
+          border-radius: 0 0 $spacing-x-small $spacing-x-small;
+        }
+
+        &:has(mat-icon) {
+          background-color: $greyish-blue;
+          color: $secondary;
+        }
+
+        mat-icon {
+          transform: scale(0.6);
+        }
+
+        &:hover {
+          background-color: $light-grey-semi-transparent;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotateRight {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateLeft {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}

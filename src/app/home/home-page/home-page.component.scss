@@ -1,0 +1,15 @@
+@import "../../../styles/variables";
+
+:host {
+  display: block;
+}
+
+.button {
+  &__container {
+    transform: translate(calc(50vw - calc($button-width-primary / 2)), 50vh);
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-larger;
+  }
+}
+

@@ -1,0 +1,4 @@
+<button *ngIf="!isHomeRoute" [routerLink]="['/home']" class="top-bar__back">
+  <mat-icon class="top-bar__icon">arrow_back</mat-icon>
+</button>
+<span class="top-bar__title">{{ 'SHARED.TOP_BAR.STAR_WARS' | translate }}</span>

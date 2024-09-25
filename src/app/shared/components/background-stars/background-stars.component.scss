@@ -1,0 +1,80 @@
+@import '../../../../styles/variables';
+
+@mixin star-after($size, $shadows) {
+  width: $size;
+  height: $size;
+  top: 2000px;
+  content: " ";
+  position: absolute;
+  box-shadow: $shadows;
+  background: transparent;
+}
+
+@function multiple-box-shadow($n, $color: $white) {
+  $value: '#{random(2000)}px #{random(2000)}px #{$color}';
+
+  @for $i from 2 through $n {
+    $value: '#{$value}, #{random(2000)}px #{random(2000)}px #{$color}';
+  }
+
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+:host {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: $background-gradient;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.stars {
+  background: transparent;
+
+  &__first {
+    width: 1px;
+    height: 1px;
+    box-shadow: $shadows-small;
+    animation: animStar 50s linear infinite;
+
+    &:after {
+      @include star-after(1px, $shadows-small);
+    }
+  }
+
+  &__second {
+    width: 2px;
+    height: 2px;
+    box-shadow: $shadows-medium;
+    animation: animStar 100s linear infinite;
+
+    &:after {
+      @include star-after(1px, $shadows-medium);
+    }
+  }
+
+  &__third {
+    width: 3px;
+    height: 3px;
+    box-shadow: $shadows-big;
+    animation: animStar 150s linear infinite;
+
+    &:after {
+      @include star-after(1px, $shadows-big);
+    }
+  }
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../../../styles/variables";
+
+:host {
+  line-height: $font-small-plus;
+
+  .height {
+    color: $light-green;
+    text-shadow: 0 0 4px $dark-green-semi-transparent;
+    background: -webkit-linear-gradient($white, $dark-greyish-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-variant-caps: petite-caps;
+  }
+
+  .mass {
+    color: $light-red;
+    text-shadow: 0 0 4px $dark-red-semitransparent;
+    background: -webkit-linear-gradient($white, $dark-greyish-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-variant-caps: petite-caps;
+  }
+
+  .bmi {
+    color: $light-purple;
+    text-shadow: 0 0 4px $marine-blue;
+    background: -webkit-linear-gradient($white, $dark-greyish-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-variant-caps: petite-caps;
+  }
+}

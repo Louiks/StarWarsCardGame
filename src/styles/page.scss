@@ -1,0 +1,9 @@
+
+app-root {
+  > ng-component {
+    display: flex;
+    overflow: hidden;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="chip chip--left slide-in-left"></div>
+<div class="counter__container counter__container--standard slide-in-top">
+  <span [ngClass]="{'hidden' : isUpdatingLeftScore}" class="counter counter--left">{{ leftPlayerScore }}</span>
+  <span class="counter counter--middle">:</span>
+  <span [ngClass]="{'hidden' : isUpdatingRightScore}" class="counter counter--right">{{ rightPlayerScore }}</span>
+</div>
+<div class="chip chip--right slide-in-right"></div>
+
+<div class="counter__container counter__container--overlay">
+  <span *ngIf="isUpdatingLeftScore" class="counter counter--left counter--old">{{ previousLeftScore }}</span>
+  <span *ngIf="isUpdatingRightScore" class="counter counter--right counter--old">{{ previousRightScore }}</span>
+</div>
+
+<div class="counter__container counter__container--overlay">
+  <span *ngIf="isUpdatingLeftScore" class="counter counter--left counter--updated">{{ leftPlayerScore }}</span>
+  <span *ngIf="isUpdatingRightScore" class="counter counter--right counter--updated">{{ rightPlayerScore }}</span>
+</div>
+

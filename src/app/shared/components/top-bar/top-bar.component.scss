@@ -1,0 +1,46 @@
+@import "../../../../styles/variables";
+
+:host {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 55px;
+  background-color: $deep-marine-blue;
+  display: flex;
+  justify-content: center;
+}
+
+.top-bar {
+  &__back {
+    fill: white;
+    background: inherit;
+    border: none;
+    position: absolute;
+    top: 1rem;
+
+    :hover {
+      color: $secondary;
+    }
+  }
+
+  &__back {
+    left: 1rem;
+  }
+
+  &__icon {
+    color: white;
+  }
+
+  &__title {
+    font-family: 'starwars', 'arial', sans-serif;
+    font-size: $font-larger;
+    line-height: $font-larger;
+    color: $white;
+  }
+
+  &__button-container {
+    display: flex;
+    width: 24px;
+  }
+}

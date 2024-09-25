@@ -1,0 +1,144 @@
+@import '../../../../styles/variables';
+
+:host {
+  position: fixed;
+  top: 55px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.chip {
+  border-bottom: 35px transparent solid;
+  display: block;
+
+  &--right {
+    border-left: 40px solid $light-grey;
+  }
+
+  &--left {
+    border-right: 40px solid $light-grey;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.counter {
+  display: flex;
+  padding-top: 12px;
+  font-size: $font-large;
+  line-height: $font-large;
+  color: whitesmoke;
+  font-family: 'starwars', 'arial', sans-serif;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 180px;
+    height: 60px;
+
+    &--standard {
+      background-color: $light-grey;
+    }
+
+    &--overlay {
+      position: absolute;
+      overflow: hidden;
+    }
+  }
+
+  &--left {
+    padding-right: $spacing-small;
+    justify-content: right;
+    grid-column: 1;
+  }
+
+
+  &--middle {
+    justify-content: center;
+    grid-column: 2;
+  }
+
+  &--right {
+    padding-left: $spacing-small;
+    justify-content: left;
+    grid-column: 3;
+  }
+
+  &--updated {
+    animation: numberSlideIn 1s forwards;
+  }
+
+  &--old {
+    animation: numberSlideOut 1s forwards;
+  }
+}
+
+.slide-in-top {
+  animation: slideFromTop 0.5s ease-out forwards;
+}
+
+.slide-in-left {
+  opacity: 0;
+  animation: slideFromRight 0.5s ease-out forwards;
+  animation-delay: 0.25s;
+}
+
+.slide-in-right {
+  opacity: 0;
+  animation: slideFromLeft 0.5s ease-out forwards;
+  animation-delay: 0.25s;
+}
+
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes numberSlideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes numberSlideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}

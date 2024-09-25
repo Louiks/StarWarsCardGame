@@ -1,0 +1,21 @@
+@import '../../../../styles/variables';
+
+:host {
+  --card-width: 1200px;
+  --half-card-width: calc(var(--card-width) / 2);
+
+  transform: translateX(calc(50vw - var(--half-card-width)));
+  width: var(--card-width);
+  box-shadow: $spacing-small-plus $spacing-small-plus $spacing-small-plus rgba(0, 0, 0, 0.5);
+  border-radius: $spacing-small;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  padding: $spacing-medium;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  margin-top: $spacing-4x-large;
+  margin-bottom: $spacing-4x-large;
+}
+

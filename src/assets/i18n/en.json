@@ -1,0 +1,95 @@
+{
+  "GAMEPLAY": {
+    "CARD": {
+      "STATS": {
+        "BODY_MASS_INDEX": "BMI",
+        "HEALTH": "H",
+        "MASS": "M"
+      }
+    },
+    "SETTINGS": {
+      "MASS": "Mass",
+      "HEIGHT": "Height",
+      "BMI": "BMI"
+    },
+    "WINNER_POSTER": {
+      "TIE": "Tie!",
+      "LEFT_PLAYER": "Left player",
+      "RIGHT_PLAYER": "Right player",
+      "WINS": "wins",
+      "WITH_A_GREATER": "with a greater",
+      "EXCLAMATION_MARK": "!",
+      "INSTRUCTION": {
+        "PRESS": "Press",
+        "DRAW": "'Draw'",
+        "TO_START": "To start",
+        "THE_GAME": "The game"
+      }
+    },
+    "GAME_PAGE": {
+      "BUTTONS": {
+        "DRAW": "DRAW"
+      }
+    }
+  },
+  "HOME_SCREEN": {
+    "HOME_PAGE": {
+      "BUTTONS": {
+        "PLAY": "Play",
+        "ABOUT": "About",
+        "HOW_TO_PLAY": "How to play"
+      }
+    }
+  },
+  "SHARED": {
+    "TOP_BAR": {
+      "STAR_WARS": "STAR WARS"
+    },
+    "HOW_TO": {
+      "WELCOMING": "Welcome to Star Wars universe!",
+      "TITLES": {
+        "HOW_TO_USE_APPLICATION": "How to use the application?",
+        "HOW_TO_CHANGE_RESOURCE": "How to change the Resource to play against?",
+        "WHAT_ARE_RESOURCES": "What are Resources?"
+      },
+      "CONTENTS": {
+        "HOW_TO_USE_APPLICATION": "Since you are reading this I guess you are wondering on <u>how to use this application</u>. Don't worry this page is made just for your convenience. So...? Let's start!<br> To begin playing you would have to quit this page by using the top left button. It leads to home page, from where it is easy to press 'Play' button located just about in the middle of the screen. It will lead you to the game it-self! Great, isn't it? Then you would have to simply press the 'Draw' button, and the fun begins! But don't worry, you will be displayed a short reminder when entering the game page. If you ever feel lost again feel free to come back here and read the instruction again!",
+        "HOW_TO_CHANGE_RESOURCE": " When you are in the game, you are half way through! Simply find and press a menu button positioned in the top right corner. There you will find an option to select which resource to play against, simple as that!",
+        "WHAT_ARE_RESOURCES_BEGINNING": "Resources are values describing the champion. They can be chosen to become a deciding factor of winning player.",
+        "WHAT_ARE_RESOURCES_HEIGHT": " - is height of the champion in centimeters.",
+        "WHAT_ARE_RESOURCES_MASS": " - is mass of the champion in kilograms.",
+        "WHAT_ARE_RESOURCES_BMI": " - is the BMI (body mass index) of the champion calculated based on two other factors.",
+        "WHAT_ARE_RESOURCES_ENDING": " Any missing value has been replaced with a '0', which automatically sets the BMI to 0, and your card to a losing position."
+      }
+    },
+    "ABOUT": {
+      "MAIN_TITLE": "About the Star Wars Application",
+      "TITLE_PROJECT_PURPOSE": "Project Purpose",
+      "CONTENT_PROJECT_PURPOSE": "This application is an interactive web-based game that allows users to engage with the iconic Star Wars\n    universe. Built using Angular 16 as part of a recruitment task, the app enables players to randomly select Star Wars\n    characters,\n    compare them based on specific attributes, and determine a winner. The main goal is to provide an\n    entertaining experience while showcasing my skills as an Angular developer.",
+      "TITLE_MY_ROLE": "My Role",
+      "CONTENT_MY_ROLE": "As the developer, I took on multiple responsibilities throughout the project:",
+      "POINTS": {
+        "APPLICATION_ARCHITECTURE": {
+          "TITLE": "Application Architecture",
+          "DESCRIPTION": "Designed the overall structure of the app, focusing on modularity and reusability of components."
+        },
+        "IMPLEMENTATION_OF_FEATURES": {
+          "TITLE": "Implementation of Features",
+          "DESCRIPTION": "Introduced key functionalities such as random selection, comparison logic, and score tracking, usage of REST API, error handling."
+        },
+        "UX_UI_DEVELOPMENT": {
+          "TITLE": "UX/UI Development",
+          "DESCRIPTION": "Implemented a user-friendly interface using Angular Material, animations, and own creativity. Ensured a consistent and appealing design. Worked hard on styles to make sure the user gets the greatest possible user experience."
+        },
+        "TESTING": {
+          "TITLE": "Testing",
+          "DESCRIPTION": "The application has been thoroughly tested by comprehensive unit and end-to-end tests, ensuring the application fits business requirements and preventing unexpected behavior."
+        },
+        "DOCUMENTATION": {
+          "TITLE": "Documentation",
+          "DESCRIPTION": "Created documentation (README.md) to guide future developers on the application’s setup and usage."
+        }
+      }
+    }
+  }
+}
