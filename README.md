@@ -154,3 +154,9 @@ The application has been tested with unit and e2e test.
   - 18 unique tests
   - Can be found in `CardGame/cypress/e2e` folder
   - Can be run using `npx cypress run`
+
+# Credits
+
+- Background star parallax: https://codepen.io/riley-pearce/pen/OJWPjZM
+- Placeholder Avatar: https://pngtree.com/freepng/oval-user-avatar-placeholder-black_6796229.html
+- The Star Wars icon is the sole property of Lucasfilm Limited.
