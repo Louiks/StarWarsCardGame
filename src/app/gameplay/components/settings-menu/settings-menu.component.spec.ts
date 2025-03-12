@@ -2,83 +2,85 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testin
 import { ChangeDetectorRef } from '@angular/core';
 import { SettingsMenuComponent } from './settings-menu.component';
 import { CalculationBase } from '../../model/person.model';
+import { TranslateModule } from "@ngx-translate/core";
 
 describe('SettingsMenuComponent', () => {
-  let component: SettingsMenuComponent;
-  let fixture: ComponentFixture<SettingsMenuComponent>;
+    let component: SettingsMenuComponent;
+    let fixture: ComponentFixture<SettingsMenuComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [SettingsMenuComponent],
-      providers: [
-        { provide: ChangeDetectorRef, useValue: { detectChanges: jasmine.createSpy('detectChanges') } }
-      ]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [SettingsMenuComponent],
+            providers: [
+                { provide: ChangeDetectorRef, useValue: { detectChanges: jasmine.createSpy('detectChanges') } }
+            ],
+            imports: [TranslateModule.forRoot()]
+        });
+
+        fixture = TestBed.createComponent(SettingsMenuComponent);
+        component = fixture.componentInstance;
     });
 
-    fixture = TestBed.createComponent(SettingsMenuComponent);
-    component = fixture.componentInstance;
-  });
-
-  afterEach(() => {
-    fixture.destroy();
-  });
-
-  describe('changeCalculationBase', () => {
-    it('should emit calculationBaseChanged', () => {
-      spyOn(component.calculationBaseChanged, 'emit');
-      const newCalculationBase: CalculationBase = 'mass';
-      const event = new Event('click');
-
-      component.changeCalculationBase(event, newCalculationBase);
-
-      expect(component.calculationBaseChanged.emit).toHaveBeenCalledWith(newCalculationBase);
+    afterEach(() => {
+        fixture.destroy();
     });
-  });
 
-  describe('onWindowClick', () => {
-    it('should close the menu when clicking outside', () => {
-      component.isMenuOpen = true;
-      component.menu = { nativeElement: document.createElement('div') };
-      const event = new MouseEvent('click', { bubbles: true });
+    describe('changeCalculationBase', () => {
+        it('should emit calculationBaseChanged', () => {
+            spyOn(component.calculationBaseChanged, 'emit');
+            const newCalculationBase: CalculationBase = 'mass';
+            const event = new Event('click');
 
-      spyOn<any>(component, 'isToggleButtonClicked').and.returnValue(false);
-      spyOn<any>(component, 'isMenuClicked').and.returnValue(false);
-      spyOn<any>(component['changeDetectorRef'], 'detectChanges');
+            component.changeCalculationBase(event, newCalculationBase);
 
-      component['onWindowClick'](event);
-
-      expect(component.isMenuOpen).toBe(false);
-      expect(component['changeDetectorRef'].detectChanges).toHaveBeenCalled();
+            expect(component.calculationBaseChanged.emit).toHaveBeenCalledWith(newCalculationBase);
+        });
     });
-  });
 
-  describe('toggleMenu', () => {
-    it('should toggle the menu open and closed', () => {
-      spyOn<any>(component['changeDetectorRef'], 'detectChanges');
-      expect(component.isMenuOpen).toBe(false);
-      expect(component.shouldAnimate).toBe(false);
+    describe('onWindowClick', () => {
+        it('should close the menu when clicking outside', () => {
+            component.isMenuOpen = true;
+            component.menu = { nativeElement: document.createElement('div') };
+            const event = new MouseEvent('click', { bubbles: true });
 
-      component['toggleMenu']();
-      expect(component.isMenuOpen).toBe(true);
-      expect(component.shouldAnimate).toBe(true);
+            spyOn<any>(component, 'isToggleButtonClicked').and.returnValue(false);
+            spyOn<any>(component, 'isMenuClicked').and.returnValue(false);
+            spyOn<any>(component['changeDetectorRef'], 'detectChanges');
 
-      component['toggleMenu']();
-      expect(component.isMenuOpen).toBe(false);
-      expect(component.shouldAnimate).toBe(true);
+            component['onWindowClick'](event);
 
-      expect(component['changeDetectorRef'].detectChanges).toHaveBeenCalledTimes(2);
+            expect(component.isMenuOpen).toBe(false);
+            expect(component['changeDetectorRef'].detectChanges).toHaveBeenCalled();
+        });
     });
-  });
 
-  describe('resetAnimationAfterDelay', () => {
-    it('should reset animation after delay', fakeAsync(() => {
-      component.shouldAnimate = true;
-      expect(component.shouldAnimate).toBe(true);
+    describe('toggleMenu', () => {
+        it('should toggle the menu open and closed', () => {
+            spyOn<any>(component['changeDetectorRef'], 'detectChanges');
+            expect(component.isMenuOpen).toBe(false);
+            expect(component.shouldAnimate).toBe(false);
 
-      component['toggleMenu']();
-      tick(component['ANIMATION_DURATION_MS']);
+            component['toggleMenu']();
+            expect(component.isMenuOpen).toBe(true);
+            expect(component.shouldAnimate).toBe(true);
 
-      expect(component.shouldAnimate).toBe(false);
-    }));
-  });
+            component['toggleMenu']();
+            expect(component.isMenuOpen).toBe(false);
+            expect(component.shouldAnimate).toBe(true);
+
+            expect(component['changeDetectorRef'].detectChanges).toHaveBeenCalledTimes(2);
+        });
+    });
+
+    describe('resetAnimationAfterDelay', () => {
+        it('should reset animation after delay', fakeAsync(() => {
+            component.shouldAnimate = true;
+            expect(component.shouldAnimate).toBe(true);
+
+            component['toggleMenu']();
+            tick(component['ANIMATION_DURATION_MS']);
+
+            expect(component.shouldAnimate).toBe(false);
+        }));
+    });
 });
